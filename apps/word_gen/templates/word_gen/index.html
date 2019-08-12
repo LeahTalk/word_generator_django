@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Current Time and Date</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="{% static '/word_gen/css/style.css' %}">
+     <!--<link rel="stylesheet" type="text/css" href="/../static/cur_time_and_date/css/style.css">-->
+
+</head>
+<body>
+    <div class = "wrapper">
+        <p style = "margin-top: 20px">Random word (attempt #{{ request.session.attempts}})</p>
+        <div class = "word_box">
+            <h1>{{ request.session.randomWord }}</h1>
+        </div>
+        <form action = '/random_word'>
+            {% csrf_token %}
+            <input class="btn btn-primary" type="submit" value="Generate">
+        </form>
+        <form action = '/random_word/reset'>
+            {% csrf_token %}
+            <input class="btn btn-primary" type="submit" value="Reset Attempts" style = "margin-top: 20px">
+        </form>
+    </div>
+</body>
+</html>

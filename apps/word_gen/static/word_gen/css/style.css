@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    margin: 0px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.word_box {
+    border: 3px solid black;
+    text-align: center;
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+}
